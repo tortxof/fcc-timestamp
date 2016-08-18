@@ -5,6 +5,10 @@ var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
+
 app.get('/:time_query', function(req, res) {
   var time;
   if (req.params.time_query === parseInt(req.params.time_query).toString()) {

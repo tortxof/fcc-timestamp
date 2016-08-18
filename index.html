@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <title>Timestamp Microservice</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Timestamp Microservice</h1>
+    <h2>Examples</h2>
+    <h3>Unix Time Input</h3>
+    <p>
+      Request:<br>
+      <code>https://powerful-hamlet-32971.herokuapp.com/1471547348</code>
+    </p>
+    <p>
+      Response:<br>
+      <code>{"unix":1471547348,"natural":"August 18, 2016"}</code>
+    </p>
+    <h3>Natural Date Input</h3>
+    <p>
+      Request:<br>
+      <code>https://powerful-hamlet-32971.herokuapp.com/May%206,%202016</code>
+    </p>
+    <p>
+      Response:<br>
+      <code>{"unix":1462492800,"natural":"May 6, 2016"}</code>
+    </p>
+  </div>
+</body>
+</html>

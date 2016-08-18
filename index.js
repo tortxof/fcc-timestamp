@@ -6,7 +6,19 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/:time_query', function(req, res) {
-  var time = moment(req.params.time_query);
+  var time;
+  if (req.params.time_query === parseInt(req.params.time_query).toString()) {
+    time = moment.unix(parseInt(req.params.time_query));
+  } else {
+    time = moment(
+      req.params.time_query,
+      [
+        'MMMM D, Y',
+        'MMMM D Y',
+        moment.ISO_8601
+      ]
+    );
+  }
   if (time.isValid()) {
     res.json({
       unix: time.unix(),
